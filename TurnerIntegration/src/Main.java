@@ -10,7 +10,7 @@ public class Main {
 		/*int num1;
 		Person john = new Person();*/
 		//john.height = 72;
-		System.out.println("Input your name:");
+		System.out.println("This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks, no stats here (yet). Input your desired name to begin:");
 		String userName = scan.nextLine();
 		int player1Level = 1;
 		System.out.println("An enemy draws near! Use a command: Attack (1) or Run (2)."); //Prompting user command, Run does not yet end the scenario, waiting for how to make a loop.
@@ -43,6 +43,28 @@ public class Main {
 		if (enemy_hp > 0) {
 			System.out.println("The enemy still stands.");//gives input on whether or not the enemy is defeated
 		}
-	} //Waffle
+		int boss_hp = 200;
+		System.out.println("A Dire Wolf appeared!");
+		while (boss_hp > 0) {
+			System.out.println("Choose an attack. (1): Attack, (2): Cross Slash (3): Energy Blast");
+			int attk2 = scan.nextInt();
+			if (attk2 == 1) {
+				boss_hp = boss_hp-15;
+				System.out.println(userName + " attacked! Dealt 15 damage to the Dire Wolf. Boss HP Remaining: " + boss_hp);
+			} else if (attk2 == 2) {
+				boss_hp = boss_hp-45;
+				System.out.println(userName + " slashed with all their might! Dealt 45 damage to the Dire Wolf. Boss HP Remaining: " + boss_hp);
+			} else if (attk2 == 3) {
+				boss_hp = boss_hp-25;
+				System.out.println(userName + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Dire Wolf. Boss HP Remaining: " + boss_hp);
+			}
+			
+		} System.out.println(userName + " defeated the Dire Wolf!");
+		player1Level += 1;
+		System.out.println(userName + " grew to Level " + player1Level + "!");
+		System.out.println(userName + " has learned Roulette Strike!");
+		System.out.println("Roulette Strike is a unique attack, its power is randomized every time it is used.");
+		
+	} 
 
 }
