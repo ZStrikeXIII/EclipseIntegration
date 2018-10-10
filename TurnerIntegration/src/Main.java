@@ -45,7 +45,7 @@ public class Main {
 		}
 		int boss_hp = 200;
 		System.out.println("A Dire Wolf appeared!");
-		while (boss_hp > 0) {
+		while (boss_hp > 0) {//A while loop test for better battle flow
 			System.out.println("Choose an attack. (1): Attack, (2): Cross Slash (3): Energy Blast");
 			int attk2 = scan.nextInt();
 			if (attk2 == 1) {
@@ -63,8 +63,8 @@ public class Main {
 		player1Level += 1;
 		System.out.println(userName + " grew to Level " + player1Level + "!");
 		System.out.println(userName + " has learned Roulette Strike!");
-		System.out.println("Roulette Strike is a unique attack, its power is randomized every time it is used.");
+		System.out.println("Roulette Strike is a unique attack, its power is randomized every time it is used.");//This is my excuse to use the random variable
 		
-	} 
+	} //Waffle
 
 }
