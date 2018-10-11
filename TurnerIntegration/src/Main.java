@@ -2,22 +2,25 @@ import java.util.Scanner;
 
 // Jackson Turner
 // A program to display what I have learned in my programming class. So far, it's an RPG battle simulator, later down the line things like EXP and Levels will be integrated, but not yet, this is a prototype so far.
+//Everything before the actual program here is the comments needed in the integration project to describe what it requires me to describe
+//Operator Precedence is like PEMDAS, there's an order to which operations are carried out from L to R, though the order is a little different. First is operators in parentheses, then increment/decrement operators (++ or --), then multiplication and division operators, and finally addition and subtraction operators, from L to R.
+//Casting is when you change a data type temporarily, and it is done by having the data type you desire in parentheses next to the value you want to change. Ex: Want to change a variable to double? Just say (double)num2.
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //This entire line is called a header, and (String[] args) is the parameter
 		Scanner scan = new Scanner(System.in);//opening a scanner to read user input
 		System.out.println("Hello, my name is Connor, I'm the android sent by CyberLife.");//Never gets old
 		/*int num1;
 		Person john = new Person();*/
 		//john.height = 72;
-		System.out.println("This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks, no stats here (yet). Input your desired name to begin:");
-		String userName = scan.nextLine();
-		int player1Level = 1;
-		System.out.println("An enemy draws near! Use a command: Attack (1) or Run (2)."); //Prompting user command, Run does not yet end the scenario, waiting for how to make a loop.
+		System.out.println("This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks, no stats here (yet). \nInput your desired name to begin, be aware you will be unable to change it later...:");//Escape method \n used to format the string to make it look better when the program is run by splitting it into a new line
+		final String userName = scan.nextLine();//Using final to make the user's name unchangable.
+		int player1Level = 1;//initiating player's level.
+		System.out.println("An enemy draws near! Press 1 to continue"); //Prompting user command
 		//String line = scan.nextLine(); //Reading user input
 		int line = scan.nextInt();//Same as above
 		//System.out.println("You used " + line); //Temporary response to user input.
-		if (line > 0 && line < 2){
+		if (line > 0 && line < 2){//If else statement
 				System.out.println(userName+ " attacked.");}
 		else {
 			System.out.println(userName+ " ran away..."); //Attempt 1 at an if else code that functions based on user input, may be edited out later.
@@ -64,6 +67,12 @@ public class Main {
 		System.out.println(userName + " grew to Level " + player1Level + "!");
 		System.out.println(userName + " has learned Roulette Strike!");
 		System.out.println("Roulette Strike is a unique attack, its power is randomized every time it is used.");//This is my excuse to use the random variable
+		String s = "N/A";
+		if (player1Level == 1) {
+			s = "level";
+		} else {
+			s = "levels";
+	} System.out.println(userName + " now has " + player1Level +" " + s); //ternary construct
 		
 	} //Waffle
 
