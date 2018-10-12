@@ -55,7 +55,7 @@ public class Main {
     Random rand = new Random(); // opening the random class
     int n = rand.nextInt(50) + 1; // initializing the random variable
     System.out.println(
-        "This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks. \nInput your desired name to begin, be aware you will be unable to change it later...:");
+        "This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks. \nInput your desired name to begin, must be at least five letters, be aware you will be unable to change it later...:");
     // Escape method \n used to format the string to make it look better when the program is run by
     // splitting it into a new line
     final String userName = scan.nextLine();// Using final to make the user's name unchangable.
@@ -179,25 +179,24 @@ public class Main {
     System.out.println(userName + " is now Level " + player1Level + "!");
     System.out.println(userName + " learned Exponential Blast!");
     System.out.println("Exponential Blast's power increases based on your level.");
-    System.out.println("A mysterious figure appeared.../n???:'My name...what is my name...?");
-    System.out.println("Enter their name: ");
-    String myName = scan.nextLine();
-    String theirName = "Van";// A bit of an easter egg for my Programming professor.
-    myName.equals(theirName);// comparing two strings using the .equals String method. This is the
-                             // only way to compare two strings.
-    if (myName.equals(theirName) == true) {
-      System.out.println("Van:'Yes, that's right! Here is a little help...");
-      player1Level += 1;
-      System.out.println(userName + " is now Level " + player1Level + "!+");
-    } else {
-      System.out.println(
-          "???:'No...that's not it...I thought you'd know.../nThe mysterious figure faded away...");
-    }
+    /*
+     * System.out.println("A mysterious figure appeared... /n???:'My name...what is my name...?");
+     * System.out.println("Enter their name: "); String myName = scan.nextLine();
+     * System.out.println("Press 1 to continue"); int cont = scan.nextInt(); if (cont == 1) {
+     * System.out.println("/n"); } else { System.out.println("/n"); } String theirName = "Van";// A
+     * bit of an easter egg for my Programming professor. myName.equals(theirName);// comparing two
+     * strings using the .equals String method. This is the // only way to compare two strings. if
+     * (myName.equals(theirName) == true) {
+     * System.out.println("Van:'Yes, that's right! Here is a little help..."); player1Level += 1;
+     * System.out.println(userName + " is now Level " + player1Level + "!+"); } else {
+     * System.out.println(
+     * "???:'No...that's not it...I thought you'd know... /nThe mysterious figure faded away..."); }
+     */ // This little easter egg didn't work properly, editing it out until I can get it working
     boss_hp = 1000;
     System.out.println("A Phantom apparates in front of you!");
     while (boss_hp > 0) {// A while loop test for better battle flow
       System.out.println(
-          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike");
+          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast");
       int attk3 = scan.nextInt();
       if (attk3 == 1) {// if then else if statement
         boss_hp = boss_hp - 15;
@@ -225,12 +224,13 @@ public class Main {
             userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
                 + expBlast + " damage to the Phantom! Boss HP Remaining: " + boss_hp);
       }
-      System.out.println("The phantom vanished into thin air..." + userName + " won!");
-      player1Level += 1;
-      System.out.println(userName + " is now Level" + player1Level + "!");
-      System.out.println(userName + " learned Grand Finale");
-      System.out.println("Grand Finale is a move that can only be used after five turns.");
-
     }
-  } // Waffles //Pancakes
-}
+    System.out.println("The phantom vanished into thin air..." + userName + " won!");
+    player1Level += 1;
+    System.out.println(userName + " is now Level" + player1Level + "!");
+    System.out.println(userName + " learned Grand Finale");
+    System.out.println("Grand Finale is a move that can only be used after five turns.");
+
+  }
+} // Waffles //Pancakes //Scramaba Egg
+
