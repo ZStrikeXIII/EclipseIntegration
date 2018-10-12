@@ -65,12 +65,14 @@ public class Main {
     System.out.println("Here's your name if it was only five characters: " + sub);// For fun!
     System.out.println(
         "As a little something, I'll increase your level based on where a certain letter lies in your name...");
-    int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where the letter a is in the index of the string userName.
+    int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where the
+                                           // letter a is in the index of the string userName.
     player1Level = player1Level + bonusLevel;
     if (player1Level > 1) {
       System.out.println(userName + " grew to Level " + player1Level + "!");
+      // Argument in the parentheses, the whole line is called a call.
     } else {
-      System.out.println(" ");
+      System.out.println("No bonus levels...");
     }
     System.out.println("An enemy draws near!\nPress 1 to continue"); // Prompting user command
     // String line = scan.nextLine(); //Reading user input
@@ -180,8 +182,9 @@ public class Main {
     System.out.println("A mysterious figure appeared.../n???:'My name...what is my name...?");
     System.out.println("Enter their name: ");
     String myName = scan.nextLine();
-    String theirName = "Van";
-    myName.equals(theirName);// comparing two strings using the .equals String method. This is the only way to compare two strings.
+    String theirName = "Van";// A bit of an easter egg for my Programming professor.
+    myName.equals(theirName);// comparing two strings using the .equals String method. This is the
+                             // only way to compare two strings.
     if (myName.equals(theirName) == true) {
       System.out.println("Van:'Yes, that's right! Here is a little help...");
       player1Level += 1;
@@ -223,6 +226,11 @@ public class Main {
                 + expBlast + " damage to the Phantom! Boss HP Remaining: " + boss_hp);
       }
       System.out.println("The phantom vanished into thin air..." + userName + " won!");
+      player1Level += 1;
+      System.out.println(userName + " is now Level" + player1Level + "!");
+      System.out.println(userName + " learned Grand Finale");
+      System.out.println("Grand Finale is a move that can only be used after five turns.");
+
     }
   } // Waffles //Pancakes
 }
