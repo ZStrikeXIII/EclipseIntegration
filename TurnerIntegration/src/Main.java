@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
 
 // Jackson Turner
 // A program to display what I have learned in my programming class. So far, it's an RPG battle
@@ -37,6 +38,9 @@ import java.util.Scanner;
 // String: This holds typed data as a sequence of characters and arrays. These have to be stated
 // with double quotations "". Strings are a CLASS, not a primitive data type, and there are a lot of
 // interesting methods that can be used with it, like getLength and substring.
+// Scope means that variables are only accessible in the method that they are declared.
+// A variable is a location in memory, such as int num1 = 23. They're very crucial to many programs,
+// and this one is no exception.
 public class Main {
 
   public static void main(String[] args) { // This entire line is called a header, and (String[]
@@ -56,6 +60,18 @@ public class Main {
     // splitting it into a new line
     final String userName = scan.nextLine();// Using final to make the user's name unchangable.
     int player1Level = 1;// initiating player's level.
+    String sub = userName.substring(0, 5); // using the substring String method. Returns only part
+                                           // of the string userName from the 0th to 4th character.
+    System.out.println("Here's your name if it was only five characters: " + sub);// For fun!
+    System.out.println(
+        "As a little something, I'll increase your level based on where a certain letter lies in your name...");
+    int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where the letter a is in the index of the string userName.
+    player1Level = player1Level + bonusLevel;
+    if (player1Level > 1) {
+      System.out.println(userName + " grew to Level " + player1Level + "!");
+    } else {
+      System.out.println(" ");
+    }
     System.out.println("An enemy draws near!\nPress 1 to continue"); // Prompting user command
     // String line = scan.nextLine(); //Reading user input
     int line = scan.nextInt();// Same as above
@@ -71,7 +87,8 @@ public class Main {
     int attk = scan.nextInt();
     String atk_result = "N/A";
     int damage = 0;// initializing attack name and damage dealt
-    if (attk == 1) {
+    if (attk == 1) {// == works as an equals sign on objects, while = is the assignment operator,
+                    // they're very different, don't get them confused!
       atk_result = "Attack";
       damage = 15;
     }
@@ -121,41 +138,91 @@ public class Main {
         "Roulette Strike is a unique attack, its power is randomized every time it is used.");
     // This is my excuse to use the random variable
     String s = "N/A";
-    if (player1Level == 1) {
+    if (player1Level == 1) {// ternary statement to check if levels were working correctly. Can be
+                            // edited out
       s = "level";
     } else {
       s = "levels";
     }
     System.out.println(userName + " now has " + player1Level + " " + s); // ternary construct
-    boss_hp = 400;
+    int golem_hp = 400;
     System.out.println("A Golem appeared!");
-    while (boss_hp > 0) {// A while loop test for better battle flow
+    while (golem_hp > 0) {// A while loop test for better battle flow
       System.out.println(
           "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike");
       int attk2 = scan.nextInt();
       if (attk2 == 1) {// if then else if statement
-        boss_hp = boss_hp - 15;
+        golem_hp = golem_hp - 15;
         System.out.println(
-            userName + " attacked! Dealt 15 damage to the Golem. Boss HP Remaining: " + boss_hp);
+            userName + " attacked! Dealt 15 damage to the Golem. Boss HP Remaining: " + golem_hp);
       } else if (attk2 == 2) {
-        boss_hp = boss_hp - 45;
+        golem_hp = golem_hp - 45;
         System.out.println(userName
             + " slashed with all their might! Dealt 45 damage to the Golem. Boss HP Remaining: "
-            + boss_hp);
+            + golem_hp);
       } else if (attk2 == 3) {
-        boss_hp = boss_hp - 25;
+        golem_hp = golem_hp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Golem. Boss HP Remaining: "
-            + boss_hp);
+            + golem_hp);
       } else if (attk2 == 4) {
+        n = rand.nextInt(50) + 1;// using the random variable
+        golem_hp = golem_hp - n;
+        System.out.println(userName + " tried their luck and slashed! Dealt " + n
+            + " damage to the Golem. Boss HP Remaining: " + golem_hp);
+      }
+    }
+    System.out.println("The Golem broke into pieces, " + userName + " won!");
+    player1Level += 1;
+    System.out.println(userName + " is now Level " + player1Level + "!");
+    System.out.println(userName + " learned Exponential Blast!");
+    System.out.println("Exponential Blast's power increases based on your level.");
+    System.out.println("A mysterious figure appeared.../n???:'My name...what is my name...?");
+    System.out.println("Enter their name: ");
+    String myName = scan.nextLine();
+    String theirName = "Van";
+    myName.equals(theirName);// comparing two strings using the .equals String method. This is the only way to compare two strings.
+    if (myName.equals(theirName) == true) {
+      System.out.println("Van:'Yes, that's right! Here is a little help...");
+      player1Level += 1;
+      System.out.println(userName + " is now Level " + player1Level + "!+");
+    } else {
+      System.out.println(
+          "???:'No...that's not it...I thought you'd know.../nThe mysterious figure faded away...");
+    }
+    boss_hp = 1000;
+    System.out.println("A Phantom apparates in front of you!");
+    while (boss_hp > 0) {// A while loop test for better battle flow
+      System.out.println(
+          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike");
+      int attk3 = scan.nextInt();
+      if (attk3 == 1) {// if then else if statement
+        boss_hp = boss_hp - 15;
+        System.out.println(
+            userName + " attacked! Dealt 15 damage to the Phantom. Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 2) {
+        boss_hp = boss_hp - 45;
+        System.out.println(userName
+            + " slashed with all their might! Dealt 45 damage to the Phantom. Boss HP Remaining: "
+            + boss_hp);
+      } else if (attk3 == 3) {
+        boss_hp = boss_hp - 25;
+        System.out.println(userName
+            + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Phantom. Boss HP Remaining: "
+            + boss_hp);
+      } else if (attk3 == 4) {
         n = rand.nextInt(50) + 1;// using the random variable
         boss_hp = boss_hp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
-            + " damage to the Golem. Boss HP Remaining: " + boss_hp);
+            + " damage to the Phantom. Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 5) {
+        int expBlast = (int) Math.pow(player1Level, 4); // casting used to fix math method
+        boss_hp = boss_hp - expBlast;
+        System.out.println(
+            userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
+                + expBlast + " damage to the Phantom! Boss HP Remaining: " + boss_hp);
       }
-
+      System.out.println("The phantom vanished into thin air..." + userName + " won!");
     }
-  } // Waffles
-  //Pancakes
-
+  } // Waffles //Pancakes
 }
