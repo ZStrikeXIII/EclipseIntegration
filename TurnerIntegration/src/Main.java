@@ -55,25 +55,23 @@ public class Main {
     Random rand = new Random(); // opening the random class
     int n = rand.nextInt(50) + 1; // initializing the random variable
     System.out.println(
-        "This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks. \nInput your desired name to begin, must be at least five letters, be aware you will be unable to change it later...:");
+        "This program is an 'endless' RPG simulator. There are multiple enemies on this path, and leveling up will grant you new attacks. \nInput your desired name to begin, be aware you will be unable to change it later...:");
     // Escape method \n used to format the string to make it look better when the program is run by
     // splitting it into a new line
     final String userName = scan.nextLine();// Using final to make the user's name unchangable.
     int player1Level = 1;// initiating player's level.
-    String sub = userName.substring(0, 5); // using the substring String method. Returns only part
-                                           // of the string userName from the 0th to 4th character.
-    System.out.println("Here's your name if it was only five characters: " + sub);// For fun!
-    System.out.println(
-        "As a little something, I'll increase your level based on where a certain letter lies in your name...");
-    int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where the
-                                           // letter a is in the index of the string userName.
-    player1Level = player1Level + bonusLevel;
-    if (player1Level > 1) {
-      System.out.println(userName + " grew to Level " + player1Level + "!");
-      // Argument in the parentheses, the whole line is called a call.
-    } else {
-      System.out.println("No bonus levels...");
-    }
+    /*
+     * String sub = userName.substring(0, 5); // using the substring String method. Returns only
+     * part // of the string userName from the 0th to 4th character.
+     * System.out.println("Here's your name if it was only five characters: " + sub);// For fun!
+     * System.out.println(
+     * "As a little something, I'll increase your level based on where a certain letter lies in your name..."
+     * ); int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where
+     * the // letter a is in the index of the string userName. player1Level = player1Level +
+     * bonusLevel; if (player1Level > 1) { System.out.println(userName + " grew to Level " +
+     * player1Level + "!"); // Argument in the parentheses, the whole line is called a call. } else
+     * { System.out.println("No bonus levels..."); }
+     */
     System.out.println("An enemy draws near!\nPress 1 to continue"); // Prompting user command
     // String line = scan.nextLine(); //Reading user input
     int line = scan.nextInt();// Same as above
@@ -110,6 +108,7 @@ public class Main {
       System.out.println("The enemy still stands.");// gives input on whether or not the enemy is
                                                     // defeated
     }
+    player1Level = 2; // in case the previous statement isn't used properly.
     int boss_hp = 200;
     System.out.println("A Dire Wolf appeared!");
     while (boss_hp > 0) {// A while loop test for better battle flow
@@ -230,7 +229,56 @@ public class Main {
     System.out.println(userName + " is now Level" + player1Level + "!");
     System.out.println(userName + " learned Grand Finale");
     System.out.println("Grand Finale is a move that can only be used after five turns.");
-
+    int grand_finale_turns = 0;
+    // Next Boss!
+    boss_hp = 1500;
+    System.out.println("A Gashadokuro looms above you!");
+    while (boss_hp > 0) {// A while loop test for better battle flow
+      System.out.println(
+          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast (6): Grand Finale");
+      int attk3 = scan.nextInt();
+      if (attk3 == 1) {// if then else if statement
+        boss_hp = boss_hp - 15;
+        System.out.println(userName
+            + " attacked! Dealt 15 damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 2) {
+        boss_hp = boss_hp - 45;
+        System.out.println(userName
+            + " slashed with all their might! Dealt 45 damage to the Gashadokuro. Boss HP Remaining: "
+            + boss_hp);
+      } else if (attk3 == 3) {
+        boss_hp = boss_hp - 25;
+        System.out.println(userName
+            + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Gashadokuro. Boss HP Remaining: "
+            + boss_hp);
+      } else if (attk3 == 4) {
+        n = rand.nextInt(50) + 1;// using the random variable
+        boss_hp = boss_hp - n;
+        System.out.println(userName + " tried their luck and slashed! Dealt " + n
+            + " damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 5) {
+        int expBlast = (int) Math.pow(player1Level, 4); // casting used to fix math method
+        boss_hp = boss_hp - expBlast;
+        System.out.println(
+            userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
+                + expBlast + " damage to the Gashadokuro! Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 6) {
+        if (grand_finale_turns >= 5) {
+          boss_hp = boss_hp - 500;
+          System.out.println(userName
+              + " concentrated their might, and struck with a brilliant slash! Dealt 500 damage to the Gashadokuro! Boss HP Remaining: "
+              + boss_hp);
+        } else {
+          System.out.println("You cannot use Grand Finale yet. Five turns must pass. Turns passed: "
+              + grand_finale_turns);
+        }
+      }
+      grand_finale_turns++;
+      System.out.println("Turns Passed: " + grand_finale_turns);
+    }
+    System.out.println("The Gashadokuro fell to pieces! " + userName + " won!");
+    player1Level += 1;
+    System.out.println(userName + " is now Level " + player1Level + "!");
   }
-} // Waffles //Pancakes //Scramaba Egg
+} // Waffles //Pancakes //Scramaba Egg //Toast
 
