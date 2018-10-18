@@ -107,12 +107,13 @@ public class Main {
     if (enemy_hp > 0) {
       System.out.println("The enemy still stands.");// gives input on whether or not the enemy is
                                                     // defeated
-    }
+    } // end of if-then battle test
     player1Level = 2; // in case the previous statement isn't used properly.
     int boss_hp = 200;
     System.out.println("A Dire Wolf appeared!");
     while (boss_hp > 0) {// A while loop test for better battle flow
-      System.out.println("Choose an attack. (1): Attack, (2): Cross Slash (3): Energy Blast");
+      System.out.println(
+          "Choose an attack. \n(1): Attack, (2): Cross Slash (3): Energy Blast (0): Examine");
       int attk2 = scan.nextInt();
       if (attk2 == 1) {// if then else if statement
         boss_hp = boss_hp - 15;
@@ -128,9 +129,12 @@ public class Main {
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Dire Wolf. Boss HP Remaining: "
             + boss_hp);
+      } else if (attk2 == 0) {
+        System.out.println("Dire Wolf\nHP: " + boss_hp
+            + "\n'A giant, ferocious wolf far stronger than an ordinary wolf. Attacks anything it considers prey, people included.'");
       }
 
-    }
+    } // end of battle 1
     System.out.println(userName + " defeated the Dire Wolf!");
     player1Level += 1;
     System.out.println(userName + " grew to Level " + player1Level + "!");
@@ -148,9 +152,9 @@ public class Main {
     System.out.println(userName + " now has " + player1Level + " " + s); // ternary construct
     int golem_hp = 400;
     System.out.println("A Golem appeared!");
-    while (golem_hp > 0) {// A while loop test for better battle flow
+    while (golem_hp > 0) {// Start of battle 2
       System.out.println(
-          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike");
+          "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (0): Examine");
       int attk2 = scan.nextInt();
       if (attk2 == 1) {// if then else if statement
         golem_hp = golem_hp - 15;
@@ -171,8 +175,11 @@ public class Main {
         golem_hp = golem_hp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
             + " damage to the Golem. Boss HP Remaining: " + golem_hp);
+      } else if (attk2 == 0) {
+        System.out.println("Golem\nHP: " + golem_hp
+            + "\n'A large beast made of stone. Made to protect certain areas, some now roam freely, attacking passersby.'");
       }
-    }
+    } // end of battle 2
     System.out.println("The Golem broke into pieces, " + userName + " won!");
     player1Level += 1;
     System.out.println(userName + " is now Level " + player1Level + "!");
@@ -193,9 +200,9 @@ public class Main {
      */ // This little easter egg didn't work properly, editing it out until I can get it working
     boss_hp = 1000;
     System.out.println("A Phantom apparates in front of you!");
-    while (boss_hp > 0) {// A while loop test for better battle flow
+    while (boss_hp > 0) {// Start of battle 3
       System.out.println(
-          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast");
+          "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast (0): Examine");
       int attk3 = scan.nextInt();
       if (attk3 == 1) {// if then else if statement
         boss_hp = boss_hp - 15;
@@ -222,8 +229,11 @@ public class Main {
         System.out.println(
             userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
                 + expBlast + " damage to the Phantom! Boss HP Remaining: " + boss_hp);
+      } else if (attk3 == 0) {
+        System.out.println("Phantom\nHP: " + boss_hp
+            + "\n'A spectre from beyond the grave that reaps the souls of those it comes across. Often believed to be Death himself.'");
       }
-    }
+    } // end of battle three
     System.out.println("The phantom vanished into thin air..." + userName + " won!");
     player1Level += 1;
     System.out.println(userName + " is now Level" + player1Level + "!");
@@ -233,9 +243,9 @@ public class Main {
     // Next Boss!
     boss_hp = 1500;
     System.out.println("A Gashadokuro looms above you!");
-    while (boss_hp > 0) {// A while loop test for better battle flow
+    while (boss_hp > 0) {// Start of battle four
       System.out.println(
-          "Choose an attack. (1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast (6): Grand Finale");
+          "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike (5): Exponential Blast (6): Grand Finale (0): Examine");
       int attk3 = scan.nextInt();
       if (attk3 == 1) {// if then else if statement
         boss_hp = boss_hp - 15;
@@ -272,13 +282,16 @@ public class Main {
           System.out.println("You cannot use Grand Finale yet. Five turns must pass. Turns passed: "
               + grand_finale_turns);
         }
+      } else if (attk3 == 0) {
+        System.out.println("Gashadokuro\nHP: " + boss_hp
+            + "\n'A fifteen foot skeleton in Japanese mythology known to bite the heads off of travelers. They are normally invisible.'");
       }
       grand_finale_turns++;
       System.out.println("Turns Passed: " + grand_finale_turns);
-    }
+    } // end of battle four
     System.out.println("The Gashadokuro fell to pieces! " + userName + " won!");
     player1Level += 1;
     System.out.println(userName + " is now Level " + player1Level + "!");
-  }
-} // Waffles //Pancakes //Scramaba Egg //Toast
+  }// end of main area
+} // Waffles //Pancakes //Scramaba Egg //Toast //Ramen
 
