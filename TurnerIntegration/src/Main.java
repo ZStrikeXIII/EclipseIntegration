@@ -219,7 +219,7 @@ public class Main {
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Phantom. Boss HP Remaining: "
             + boss_hp);
       } else if (attk3 == 4) {
-        n = rand.nextInt(50) + 1;// using the random variable
+        n = rand.nextInt(50) + 1;
         boss_hp = boss_hp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
             + " damage to the Phantom. Boss HP Remaining: " + boss_hp);
@@ -262,18 +262,18 @@ public class Main {
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the Gashadokuro. Boss HP Remaining: "
             + boss_hp);
       } else if (attk3 == 4) {
-        n = rand.nextInt(50) + 1;// using the random variable
+        n = rand.nextInt(50) + 1;
         boss_hp = boss_hp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
             + " damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
       } else if (attk3 == 5) {
-        int expBlast = (int) Math.pow(player1Level, 4); // casting used to fix math method
+        int expBlast = (int) Math.pow(player1Level, 4);
         boss_hp = boss_hp - expBlast;
         System.out.println(
             userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
                 + expBlast + " damage to the Gashadokuro! Boss HP Remaining: " + boss_hp);
       } else if (attk3 == 6) {
-        if (grand_finale_turns >= 5) {
+        if (grand_finale_turns >= 5) {// start of grand finale if-then-else
           boss_hp = boss_hp - 500;
           System.out.println(userName
               + " concentrated their might, and struck with a brilliant slash! Dealt 500 damage to the Gashadokuro! Boss HP Remaining: "
@@ -284,8 +284,8 @@ public class Main {
         }
       } else if (attk3 == 0) {
         System.out.println("Gashadokuro\nHP: " + boss_hp
-            + "\n'A fifteen foot skeleton in Japanese mythology known to bite the heads off of travelers. They are normally invisible.'");
-      }
+            + "\n'A skeleton fifteen times the size of an average human in Japanese mythology known to bite the heads off of travelers. They are normally invisible.'");
+      } // end of grand finale if-then-else
       grand_finale_turns++;
       System.out.println("Turns Passed: " + grand_finale_turns);
     } // end of battle four
