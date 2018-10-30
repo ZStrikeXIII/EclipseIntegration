@@ -45,6 +45,13 @@ public class Main {
 
   public static void main(String[] args) { // This entire line is called a header, and (String[]
                                            // args) is the parameter
+    CollegeClass cop2006201808 = new CollegeClass();
+    String[] phyRoster = {"Zack"};
+    CollegeClass phy2048c201808 = new CollegeClass("Physics I", 4, phyRoster);
+    SLClass myClass = new SLClass();
+    cop2006201808.printInfo();
+    myClass.printInfo();
+    
     Scanner scan = new Scanner(System.in);// opening a scanner to read user input
     System.out.println("Hello, my name is Connor, I'm the android sent by CyberLife.");// Never gets
                                                                                        // old
