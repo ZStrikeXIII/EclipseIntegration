@@ -1,4 +1,4 @@
-
+// Jackson Turner
 public class SLClass extends CollegeClass {
   // inheritance is being used here. It is where a child class inherits all of the same methods and
   // fields that the class they are a subclass of has. Here, SLClass inherits everything from

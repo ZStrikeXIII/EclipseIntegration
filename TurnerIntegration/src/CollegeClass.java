@@ -1,4 +1,4 @@
-
+// Jackson Turner
 public class CollegeClass {
   // fields
   private String name;
@@ -33,6 +33,7 @@ public class CollegeClass {
     this.name = name;
     // field name = parameter name
   }
+
   public void printInfo() {
     System.out.println("College Class");
   }

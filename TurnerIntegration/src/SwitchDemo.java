@@ -1,3 +1,4 @@
+// Jackson Turner
 // This class is exclusively made to show an example of a Switch class, as I couldn't find a way to
 // get it into my actual program...
 public class SwitchDemo {
@@ -54,7 +55,7 @@ public class SwitchDemo {
     System.out.println(number4++);
     System.out.println(number4--);
     System.out.println(9 % 2);
-    System.out.println(10*2);
+    System.out.println(10 * 2);
 
   }
 
