@@ -109,7 +109,8 @@ public class Main {
       while (attk2 == 99) {
         try {
           attk2 = scan.nextInt();
-        } catch (InputMismatchException ex) { // Exception handling
+        } catch (InputMismatchException ex) { // Exception handling used in case the input is not an
+                                              // integer
           System.out.println("Please input a number");
           scan.nextLine();
         }
@@ -316,5 +317,5 @@ public class Main {
     player1Level += 1;
     System.out.println(userName + " is now Level " + player1Level + "!");
   }// end of main area
-} // Waffles //Pancakes //Scramaba Egg //Toast //Ramen
+} // Waffles //Pancakes //Scramaba Egg //Toast //Ramen //Spaghetti
 
