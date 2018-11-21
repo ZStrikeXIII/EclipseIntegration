@@ -36,5 +36,24 @@ public class Arrays {
       w++;
     }
     System.out.println("The number 13 was found at index " + (w - 1));
+    int[][] searchTwo = {{4, 8, 12, 16}, {3, 6, 9, 12}};// searching a 2D array
+    boolean found2 = false;
+    int len1 = 0;
+    int len2 = 0;
+    while (found2 == false && len2 < searchTwo.length && len1 < searchTwo.length) {
+      if (searchTwo[len1][len2] == 9) {
+        found2 = true;
+      }
+      len1++;
+      len2++;
+    }
+    System.out.println("The number 9 was found at coordinates " + len1 + ", " + len2);
+    int totalSum = 0;
+    int addedNum = 1;
+    do {// do-while statement
+      totalSum += addedNum;
+      addedNum++;
+    } while (addedNum < 10);
+    System.out.println("The total sum of the do-while statement is " + totalSum);
   }// end of "main"
 }
