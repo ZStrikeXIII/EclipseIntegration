@@ -16,7 +16,7 @@ public class CollegeClass {
   }
 
   // overloaded constructor with parameters
-  public CollegeClass(String name, int credits, String[] roster) {
+  public CollegeClass(String name, int credits, String[] roster) {//egg
     this.name = name;
     this.credits = credits;
     this.roster = roster;
