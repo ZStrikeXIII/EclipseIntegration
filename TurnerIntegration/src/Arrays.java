@@ -12,7 +12,7 @@ public class Arrays {
     }
     System.out.println(min);
     int sum = 0;
-    for (int counter = 0; counter < scores.length; counter++) {// Enhanced for loop
+    for (int counter = 0; counter < scores.length; counter++) {
       sum += scores[counter];
     }
     System.out.println("The sum of the scores is " + sum);

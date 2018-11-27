@@ -15,7 +15,7 @@ public class CollegeClass {
     roster = new String[60];
   }
 
-  // overloaded
+  // overloaded constructor with parameters
   public CollegeClass(String name, int credits, String[] roster) {
     this.name = name;
     this.credits = credits;
@@ -24,12 +24,12 @@ public class CollegeClass {
 
   // accessors
 
-  public String getName() {
+  public String getName() {// getter
     return name;
   }
 
   // mutators
-  public void setName(String name) {
+  public void setName(String name) {// setter
     this.name = name;
     // field name = parameter name
   }

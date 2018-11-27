@@ -9,9 +9,4 @@ public class SLClass extends CollegeClass {
     System.out.println("SL College Class");// overriding
   }
 
-  public static void main(String[] args) {
-    SLClass polymorph = new SLClass(); // Polymorphism is used here, this method call from SLClass
-                                       // is derived from a method call in CollegeClass, both of
-                                       // which perform the same functions.
-  }
 }

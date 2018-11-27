@@ -51,6 +51,11 @@ public class Main {
      * phy2048c201808 = new CollegeClass("Physics I", 4, phyRoster); SLClass myClass = new
      * SLClass(); cop2006201808.printInfo(); myClass.printInfo();
      */
+    
+    CollegeClass thisClass = new SLClass(); // Polymorphism is used here, this method call from SLClass
+    // is derived from a method call in CollegeClass, both of
+    // which perform the same functions.
+    thisClass.printInfo();
 
     Scanner scan = new Scanner(System.in);// opening a scanner to read user input
     System.out.println("Hello, my name is Connor, I'm the android sent by CyberLife.");// Never gets
