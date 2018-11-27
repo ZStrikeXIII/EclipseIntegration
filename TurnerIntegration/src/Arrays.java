@@ -42,16 +42,16 @@ public class Arrays {
     int col = 0;
     while (found2 == false && row < searchTwo.length) {
       while (col < 4) {
-      if (searchTwo[row][col] == 9) {
-        found2 = true;
-        System.out.println("The number 9 was found at coordinates " + row + ", " + col);
+        if (searchTwo[row][col] == 9) {
+          found2 = true;
+          System.out.println("The number 9 was found at coordinates " + row + ", " + col);
+        }
+        col++;
       }
-      col++;
+      row++;
+      col = 0;
     }
-    row++;
-    col = 0;
-    }
-    
+
     int totalSum = 0;
     int addedNum = 1;
     do {// do-while statement

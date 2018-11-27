@@ -16,7 +16,7 @@ public class CollegeClass {
   }
 
   // overloaded constructor with parameters
-  public CollegeClass(String name, int credits, String[] roster) {//egg
+  public CollegeClass(String name, int credits, String[] roster) {
     this.name = name;
     this.credits = credits;
     this.roster = roster;
@@ -36,6 +36,10 @@ public class CollegeClass {
 
   public void printInfo() {
     System.out.println("College Class");
+    System.out.println(name);
+    System.out.println(credits);
+    System.out.println(roster[1]);
+
   }
 
 }

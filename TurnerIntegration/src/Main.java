@@ -51,8 +51,9 @@ public class Main {
      * phy2048c201808 = new CollegeClass("Physics I", 4, phyRoster); SLClass myClass = new
      * SLClass(); cop2006201808.printInfo(); myClass.printInfo();
      */
-    
-    CollegeClass thisClass = new SLClass(); // Polymorphism is used here, this method call from SLClass
+
+    CollegeClass thisClass = new SLClass(); // Polymorphism is used here, this method call from
+                                            // SLClass
     // is derived from a method call in CollegeClass, both of
     // which perform the same functions.
     thisClass.printInfo();
@@ -68,9 +69,8 @@ public class Main {
     int n = rand.nextInt(50) + 1; // initializing the random variable
     System.out.println(
         "This program is an 'endless' RPG simulator. There are multiple enemies on this path, "
-        + "and leveling up will grant you new attacks. \nInput your desired name to begin, "
-        + "be aware you wi"
-        + "ll be unable to change it later...:");
+            + "and leveling up will grant you new attacks. \nInput your desired name to begin, "
+            + "be aware you wi" + "ll be unable to change it later...:");
     // Escape method \n used to format the string to make it look better when the program is run by
     // splitting it into a new line
     final String userName = scan.nextLine();// Using final to make the user's name unchangable.
@@ -79,14 +79,12 @@ public class Main {
      * String sub = userName.substring(0, 5); // using the substring String method. Returns only
      * part // of the string userName from the 0th to 4th character.
      * System.out.println("Here's your name if it was only five characters: " + sub);// For fun!
-     * System.out.println(
-     * "As a little something, I'll increase your level based on where a certain letter lies in your 
-     * name..."
-     * ); int bonusLevel = userName.indexOf('a');// using the indexOf String method. Counts where
-     * the // letter a is in the index of the string userName. player1Level = player1Level +
-     * bonusLevel; if (player1Level > 1) { System.out.println(userName + " grew to Level " +
-     * player1Level + "!"); // Argument in the parentheses, the whole line is called a call. } else
-     * { System.out.println("No bonus levels..."); }
+     * System.out.println( "As a little something, I'll increase your level based on where a certain
+     * letter lies in your name..." ); int bonusLevel = userName.indexOf('a');// using the indexOf
+     * String method. Counts where the // letter a is in the index of the string userName.
+     * player1Level = player1Level + bonusLevel; if (player1Level > 1) { System.out.println(userName
+     * + " grew to Level " + player1Level + "!"); // Argument in the parentheses, the whole line is
+     * called a call. } else { System.out.println("No bonus levels..."); }
      */
     /*
      * System.out.println("An enemy draws near!\nPress 1 to continue"); // Prompting user command //
@@ -137,8 +135,7 @@ public class Main {
         boss_hp = boss_hp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Dire Wolf. Boss HP Remaining: "
-            + boss_hp);
+            + "Dire Wolf. Boss HP Remaining: " + boss_hp);
       } else if (attk2 == 0) {
         System.out.println("Dire Wolf\nHP: " + boss_hp
             + "\n'A giant, ferocious wolf far stronger than an ordinary wolf. Attacks anything it "
@@ -166,7 +163,7 @@ public class Main {
     while (golem_hp > 0) {// Start of battle 2
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike"
-          + " (0): Examine");
+              + " (0): Examine");
       int attk2 = 99;
       while (attk2 == 99) {
         try {
@@ -189,8 +186,7 @@ public class Main {
         golem_hp = golem_hp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Golem. Boss HP Remaining: "
-            + golem_hp);
+            + "Golem. Boss HP Remaining: " + golem_hp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;// using the random variable
         golem_hp = golem_hp - n;
@@ -225,7 +221,7 @@ public class Main {
     while (boss_hp > 0) {// Start of battle 3
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike "
-          + "(5): Exponential Blast (0): Examine");
+              + "(5): Exponential Blast (0): Examine");
       int attk2 = 99;
       while (attk2 == 99) {
         try {
@@ -248,8 +244,7 @@ public class Main {
         boss_hp = boss_hp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Phantom. Boss HP Remaining: "
-            + boss_hp);
+            + "Phantom. Boss HP Remaining: " + boss_hp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;
         boss_hp = boss_hp - n;
@@ -279,7 +274,7 @@ public class Main {
     while (boss_hp > 0) {// Start of battle four
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike"
-          + " (5): Exponential Blast (6): Grand Finale (0): Examine");
+              + " (5): Exponential Blast (6): Grand Finale (0): Examine");
       int attk2 = 99;
       while (attk2 == 99) {
         try {
@@ -295,16 +290,14 @@ public class Main {
             + " attacked! Dealt 15 damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
       } else if (attk2 == 2) {
         boss_hp = boss_hp - 45;
-        System.out.println(userName
-            + " slashed with all their might! Dealt 45 damage to the Gashadokuro. "
-            + "Boss HP Remaining: "
-            + boss_hp);
+        System.out.println(
+            userName + " slashed with all their might! Dealt 45 damage to the Gashadokuro. "
+                + "Boss HP Remaining: " + boss_hp);
       } else if (attk2 == 3) {
         boss_hp = boss_hp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Gashadokuro. Boss HP Remaining: "
-            + boss_hp);
+            + "Gashadokuro. Boss HP Remaining: " + boss_hp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;
         boss_hp = boss_hp - n;
@@ -321,8 +314,7 @@ public class Main {
           boss_hp = boss_hp - 500;
           System.out.println(userName
               + " concentrated their might, and struck with a brilliant slash! Dealt 500 damage to "
-              + "the Gashadokuro! Boss HP Remaining: "
-              + boss_hp);
+              + "the Gashadokuro! Boss HP Remaining: " + boss_hp);
         } else {
           System.out.println("You cannot use Grand Finale yet. Five turns must pass. Turns passed: "
               + grand_finale_turns);

@@ -1,12 +1,12 @@
 // Jackson Turner
 public class PlayableCharacters {
-  public int hp;
-  public int atk;
-  public int def;
-  public int matk;
-  public int mdef;
-  public int spd;
-  public int acc;
+  // public int hp;
+  // public int atk;
+  // public int def;
+  // public int matk;
+  // public int mdef;
+  // public int spd;
+  // public int acc;
 
   public static void main(String[] args) {
     int imanis = 0;
@@ -15,6 +15,7 @@ public class PlayableCharacters {
       imanis++;
       break; // break will immediately terminate the loop when it is used, as shown here.
     }
+    System.out.println(imanis);
     int inanis = 0;
     while (inanis < 9) {
       System.out.println("int inanis currently = " + inanis);
