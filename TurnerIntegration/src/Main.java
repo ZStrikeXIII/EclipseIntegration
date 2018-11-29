@@ -1,9 +1,9 @@
+// Jackson Turner
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
-// Jackson Turner
 // A program to display what I have learned in my programming class. So far, it's an RPG battle
 // simulator, later down the line things like EXP and Levels will be integrated, but not yet, this
 // is a prototype so far.
@@ -42,25 +42,38 @@ import java.util.jar.Attributes.Name;
 // Scope means that variables are only accessible in the method that they are declared.
 // A variable is a location in memory, such as int num1 = 23. They're very crucial to many programs,
 // and this one is no exception.
+/**
+ * This contains my entire main code, using many elements of what we learned to make an RPG battle
+ * simulator.
+ * 
+ * @author Jackson Turner
+ *
+ */
 public class Main {
 
-  public static void main(String[] args) { // This entire line is called a header, and (String[]
-                                           // args) is the parameter
+  /**
+   * The entirety of my main code, which is an "endless" RPG battle simulator.
+   * 
+   * @param args The default parameter for the main method.
+   */
+  public static void main(String[] args) {
+    // The entire line above is called a header, and (String[] args) is the parameter
     /*
      * CollegeClass cop2006201808 = new CollegeClass(); String[] phyRoster = {"Zack"}; CollegeClass
      * phy2048c201808 = new CollegeClass("Physics I", 4, phyRoster); SLClass myClass = new
      * SLClass(); cop2006201808.printInfo(); myClass.printInfo();
      */
 
-    CollegeClass thisClass = new SLClass(); // Polymorphism is used here, this method call from
-                                            // SLClass
+    CollegeClass thisClass = new ServiceLearningClass();
+    // Polymorphism is used here, this method call from
+    // SLClass
     // is derived from a method call in CollegeClass, both of
     // which perform the same functions.
     thisClass.printInfo();
 
     Scanner scan = new Scanner(System.in);// opening a scanner to read user input
-    System.out.println("Hello, my name is Connor, I'm the android sent by CyberLife.");// Never gets
-                                                                                       // old
+    System.out.println("Hello, my name is Connor, I'm the android sent by CyberLife.");
+    // Never gets old
     /*
      * int num1; Person john = new Person();
      */
@@ -70,7 +83,7 @@ public class Main {
     System.out.println(
         "This program is an 'endless' RPG simulator. There are multiple enemies on this path, "
             + "and leveling up will grant you new attacks. \nInput your desired name to begin, "
-            + "be aware you wi" + "ll be unable to change it later...:");
+            + "be aware you will be unable to change it later...:");
     // Escape method \n used to format the string to make it look better when the program is run by
     // splitting it into a new line
     final String userName = scan.nextLine();// Using final to make the user's name unchangable.
@@ -107,37 +120,39 @@ public class Main {
      * // defeated } // end of if-then battle test
      */ // Commented out initial battle "loop"
     player1Level = 2; // in case the previous statement isn't used properly.
-    int boss_hp = 200;
+    int bossHp = 200;
     System.out.println("A Dire Wolf appeared!");
-    while (boss_hp > 0) {// A while loop test for better battle flow
+    while (bossHp > 0) {
+      // A while loop test for better battle flow
       System.out.println(
           "Choose an attack. \n(1): Attack, (2): Cross Slash (3): Energy Blast (0): Examine");
       int attk2 = 99;
       while (attk2 == 99) {
         try {
           attk2 = scan.nextInt();
-        } catch (InputMismatchException ex) { // Exception handling used in case the input is not an
-                                              // integer
+        } catch (InputMismatchException ex) {
+          // Exception handling used in case the input is not an integer
           System.out.println("Please input a number");
           scan.nextLine();
         }
       }
-      if (attk2 == 1) {// if then else if statement
-        boss_hp = boss_hp - 15;
-        System.out.println(userName
-            + " attacked! Dealt 15 damage to the Dire Wolf. Boss HP Remaining: " + boss_hp);
+      if (attk2 == 1) {
+        // if then else if statement
+        bossHp = bossHp - 15;
+        System.out.println(
+            userName + " attacked! Dealt 15 damage to the Dire Wolf. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 2) {
-        boss_hp = boss_hp - 45;
+        bossHp = bossHp - 45;
         System.out.println(userName
             + " slashed with all their might! Dealt 45 damage to the Dire Wolf. Boss HP Remaining: "
-            + boss_hp);
+            + bossHp);
       } else if (attk2 == 3) {
-        boss_hp = boss_hp - 25;
+        bossHp = bossHp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Dire Wolf. Boss HP Remaining: " + boss_hp);
+            + "Dire Wolf. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 0) {
-        System.out.println("Dire Wolf\nHP: " + boss_hp
+        System.out.println("Dire Wolf\nHP: " + bossHp
             + "\n'A giant, ferocious wolf far stronger than an ordinary wolf. Attacks anything it "
             + "considers prey, people included.'");
       }
@@ -150,17 +165,18 @@ public class Main {
     System.out.println(
         "Roulette Strike is a unique attack, its power is randomized every time it is used.");
     // This is my excuse to use the random variable
+    // Below is a ternary statements to check if levels are working properly, can be commented out
     String s = "N/A";
-    if (player1Level == 1) {// ternary statement to check if levels were working correctly. Can be
-                            // edited out
+    if (player1Level == 1) {
       s = "level";
     } else {
       s = "levels";
     }
     System.out.println(userName + " now has " + player1Level + " " + s); // ternary construct
-    int golem_hp = 400;
+    int golemHp = 400;
     System.out.println("A Golem appeared!");
-    while (golem_hp > 0) {// Start of battle 2
+    while (golemHp > 0) {
+      // Start of battle 2
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike"
               + " (0): Examine");
@@ -173,27 +189,27 @@ public class Main {
           scan.nextLine();
         }
       }
-      if (attk2 == 1) {// if then else if statement
-        golem_hp = golem_hp - 15;
+      if (attk2 == 1) {
+        golemHp = golemHp - 15;
         System.out.println(
-            userName + " attacked! Dealt 15 damage to the Golem. Boss HP Remaining: " + golem_hp);
+            userName + " attacked! Dealt 15 damage to the Golem. Boss HP Remaining: " + golemHp);
       } else if (attk2 == 2) {
-        golem_hp = golem_hp - 45;
+        golemHp = golemHp - 45;
         System.out.println(userName
             + " slashed with all their might! Dealt 45 damage to the Golem. Boss HP Remaining: "
-            + golem_hp);
+            + golemHp);
       } else if (attk2 == 3) {
-        golem_hp = golem_hp - 25;
+        golemHp = golemHp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Golem. Boss HP Remaining: " + golem_hp);
+            + "Golem. Boss HP Remaining: " + golemHp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;// using the random variable
-        golem_hp = golem_hp - n;
+        golemHp = golemHp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
-            + " damage to the Golem. Boss HP Remaining: " + golem_hp);
+            + " damage to the Golem. Boss HP Remaining: " + golemHp);
       } else if (attk2 == 0) {
-        System.out.println("Golem\nHP: " + golem_hp
+        System.out.println("Golem\nHP: " + golemHp
             + "\n'A large beast made of stone. Made to protect certain areas, some now roam freely,"
             + " attacking passersby.'");
       }
@@ -204,6 +220,7 @@ public class Main {
     System.out.println(userName + " learned Exponential Blast!");
     System.out.println("Exponential Blast's power increases based on your level.");
     /*
+     * An easter egg commented out due to it not working properly
      * System.out.println("A mysterious figure appeared... /n???:'My name...what is my name...?");
      * System.out.println("Enter their name: "); String myName = scan.nextLine();
      * System.out.println("Press 1 to continue"); int cont = scan.nextInt(); if (cont == 1) {
@@ -215,10 +232,11 @@ public class Main {
      * System.out.println(userName + " is now Level " + player1Level + "!+"); } else {
      * System.out.println(
      * "???:'No...that's not it...I thought you'd know... /nThe mysterious figure faded away..."); }
-     */ // This little easter egg didn't work properly, editing it out until I can get it working
-    boss_hp = 1000;
+     */
+    bossHp = 1000;
     System.out.println("A Phantom apparates in front of you!");
-    while (boss_hp > 0) {// Start of battle 3
+    while (bossHp > 0) {
+      // Start of battle 3
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike "
               + "(5): Exponential Blast (0): Examine");
@@ -226,38 +244,38 @@ public class Main {
       while (attk2 == 99) {
         try {
           attk2 = scan.nextInt();
-        } catch (InputMismatchException ex) { // Exception handling
+        } catch (InputMismatchException ex) {
           System.out.println("Please input a number");
           scan.nextLine();
         }
       }
-      if (attk2 == 1) {// if then else if statement
-        boss_hp = boss_hp - 15;
+      if (attk2 == 1) {
+        bossHp = bossHp - 15;
         System.out.println(
-            userName + " attacked! Dealt 15 damage to the Phantom. Boss HP Remaining: " + boss_hp);
+            userName + " attacked! Dealt 15 damage to the Phantom. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 2) {
-        boss_hp = boss_hp - 45;
+        bossHp = bossHp - 45;
         System.out.println(userName
             + " slashed with all their might! Dealt 45 damage to the Phantom. Boss HP Remaining: "
-            + boss_hp);
+            + bossHp);
       } else if (attk2 == 3) {
-        boss_hp = boss_hp - 25;
+        bossHp = bossHp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Phantom. Boss HP Remaining: " + boss_hp);
+            + "Phantom. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;
-        boss_hp = boss_hp - n;
+        bossHp = bossHp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
-            + " damage to the Phantom. Boss HP Remaining: " + boss_hp);
+            + " damage to the Phantom. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 5) {
         int expBlast = (int) Math.pow(player1Level, 4); // casting used to fix math method
-        boss_hp = boss_hp - expBlast;
+        bossHp = bossHp - expBlast;
         System.out.println(
             userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
-                + expBlast + " damage to the Phantom! Boss HP Remaining: " + boss_hp);
+                + expBlast + " damage to the Phantom! Boss HP Remaining: " + bossHp);
       } else if (attk2 == 0) {
-        System.out.println("Phantom\nHP: " + boss_hp
+        System.out.println("Phantom\nHP: " + bossHp
             + "\n'A spectre from beyond the grave that reaps the souls of those it comes across. "
             + "Often believed to be Death himself.'");
       }
@@ -267,11 +285,12 @@ public class Main {
     System.out.println(userName + " is now Level" + player1Level + "!");
     System.out.println(userName + " learned Grand Finale");
     System.out.println("Grand Finale is a move that can only be used after five turns.");
-    int grand_finale_turns = 0;
+    int grandFinaleTurns = 0;
     // Next Boss!
-    boss_hp = 1500;
+    bossHp = 1500;
     System.out.println("A Gashadokuro looms above you!");
-    while (boss_hp > 0) {// Start of battle four
+    while (bossHp > 0) {
+      // Start of battle four
       System.out.println(
           "Choose an attack. \n(1): Attack (2): Cross Slash (3): Energy Blast (4): Roulette Strike"
               + " (5): Exponential Blast (6): Grand Finale (0): Examine");
@@ -279,57 +298,59 @@ public class Main {
       while (attk2 == 99) {
         try {
           attk2 = scan.nextInt();
-        } catch (InputMismatchException ex) { // Exception handling
+        } catch (InputMismatchException ex) {
           System.out.println("Please input a number");
           scan.nextLine();
         }
       }
-      if (attk2 == 1) {// if then else if statement
-        boss_hp = boss_hp - 15;
+      if (attk2 == 1) {
+        bossHp = bossHp - 15;
         System.out.println(userName
-            + " attacked! Dealt 15 damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
+            + " attacked! Dealt 15 damage to the Gashadokuro. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 2) {
-        boss_hp = boss_hp - 45;
+        bossHp = bossHp - 45;
         System.out.println(
             userName + " slashed with all their might! Dealt 45 damage to the Gashadokuro. "
-                + "Boss HP Remaining: " + boss_hp);
+                + "Boss HP Remaining: " + bossHp);
       } else if (attk2 == 3) {
-        boss_hp = boss_hp - 25;
+        bossHp = bossHp - 25;
         System.out.println(userName
             + " put out their hand, and a blast of energy engulfed the foe! Dealt 25 damage to the "
-            + "Gashadokuro. Boss HP Remaining: " + boss_hp);
+            + "Gashadokuro. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 4) {
         n = rand.nextInt(50) + 1;
-        boss_hp = boss_hp - n;
+        bossHp = bossHp - n;
         System.out.println(userName + " tried their luck and slashed! Dealt " + n
-            + " damage to the Gashadokuro. Boss HP Remaining: " + boss_hp);
+            + " damage to the Gashadokuro. Boss HP Remaining: " + bossHp);
       } else if (attk2 == 5) {
         int expBlast = (int) Math.pow(player1Level, 4);
-        boss_hp = boss_hp - expBlast;
+        bossHp = bossHp - expBlast;
         System.out.println(
             userName + " drew in their strength, and unleashed it in a blast of flame! Dealt "
-                + expBlast + " damage to the Gashadokuro! Boss HP Remaining: " + boss_hp);
+                + expBlast + " damage to the Gashadokuro! Boss HP Remaining: " + bossHp);
       } else if (attk2 == 6) {
-        if (grand_finale_turns >= 5) {// start of grand finale if-then-else
-          boss_hp = boss_hp - 500;
+        if (grandFinaleTurns >= 5) {
+          // start of grand finale if-then-else
+          bossHp = bossHp - 500;
           System.out.println(userName
               + " concentrated their might, and struck with a brilliant slash! Dealt 500 damage to "
-              + "the Gashadokuro! Boss HP Remaining: " + boss_hp);
+              + "the Gashadokuro! Boss HP Remaining: " + bossHp);
         } else {
           System.out.println("You cannot use Grand Finale yet. Five turns must pass. Turns passed: "
-              + grand_finale_turns);
+              + grandFinaleTurns);
         }
       } else if (attk2 == 0) {
-        System.out.println("Gashadokuro\nHP: " + boss_hp
+        System.out.println("Gashadokuro\nHP: " + bossHp
             + "\n'A skeleton fifteen times the size of an average human in Japanese mythology known"
             + " to bite the heads off of travelers. They are normally invisible.'");
       } // end of grand finale if-then-else
-      grand_finale_turns++;
-      System.out.println("Turns Passed: " + grand_finale_turns);
+      grandFinaleTurns++;
+      System.out.println("Turns Passed: " + grandFinaleTurns);
     } // end of battle four
     System.out.println("The Gashadokuro fell to pieces! " + userName + " won!");
     player1Level += 1;
     System.out.println(userName + " is now Level " + player1Level + "!");
-  }// end of main area
-} // Waffles //Pancakes //Scramaba Egg //Toast //Ramen //Spaghetti
+  }
+  // end of main area
+} // Waffles //Pancakes //Scramba Egg //Toast //Ramen //Spaghetti
 

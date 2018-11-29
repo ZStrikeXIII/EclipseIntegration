@@ -1,7 +1,20 @@
 // Jackson Turner
+// This class was made to show off everything needed to show involving arrays, as well as a do-while
+// statement.
 import java.util.ArrayList;
 
+/**
+ * This class shows everything involving arrays that we learned, with a do-while statement included.
+ * 
+ * @author Jackson Turner
+ *
+ */
 public class Arrays {
+  /**
+   * The main area of the class where arrays are used.
+   * 
+   * @param args The default parameters of a main method.
+   */
   public static void main(String[] args) {
     int[] scores = {96, 43, 50, 72, 13};// creating an array
     int min = scores[0];
@@ -28,8 +41,8 @@ public class Arrays {
     int[] locate = {2, 81, 27, 13, 42, 47};// preparing to search for 13 in an array
     boolean found = false;
     int w = 0;
-    while (found == false && w < locate.length) {// searching for a value in an array and returning
-                                                 // its index
+    while (found == false && w < locate.length) {
+      // searching for a value in an array and returning its index
       if (locate[w] == 13) {
         found = true;
         System.out.println("The number 13 was found at index " + (w));
@@ -54,10 +67,11 @@ public class Arrays {
 
     int totalSum = 0;
     int addedNum = 1;
-    do {// do-while statement
+    // do-while statement
+    do {
       totalSum += addedNum;
       addedNum++;
     } while (addedNum < 10);
     System.out.println("The total sum of the do-while statement is " + totalSum);
-  }// end of "main"
+  } // end of "main"
 }
