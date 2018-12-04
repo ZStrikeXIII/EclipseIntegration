@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 /**
  * This class shows everything involving arrays that we learned, with a do-while statement included.
+ * These include creating arrays, searching them for specific values, and the same for
+ * two-dimensional arrays.
  * 
  * @author Jackson Turner
  *
