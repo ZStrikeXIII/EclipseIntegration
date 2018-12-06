@@ -67,7 +67,7 @@ public class CollegeClass {
   }
 
   /**
-   * Used to print out the information the methods above set, and prints it out when called.
+   * Used to print out the information that the methods above set, and prints it out when called.
    * 
    */
   public void printInfo() {

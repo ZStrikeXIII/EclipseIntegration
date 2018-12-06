@@ -44,7 +44,7 @@ import java.util.jar.Attributes.Name;
 // and this one is no exception.
 /**
  * This contains my entire main code, using many elements of what we learned to make an RPG battle
- * simulator.
+ * simulator. The user inputs a number, and will use an attack depending on the number selected.
  * 
  * @author Jackson Turner
  *
@@ -52,7 +52,7 @@ import java.util.jar.Attributes.Name;
 public class Main {
 
   /**
-   * The entirety of my main code, which is an "endless" RPG battle simulator.
+   * The entirety of my main code, which is an "endless" RPG battle simulator, described above.
    * 
    * @param args The default parameter for the main method.
    */

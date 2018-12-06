@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Arrays {
   /**
-   * The main area of the class where arrays are used.
+   * The main area of the class where arrays are used, all of which are described above.
    * 
    * @param args The default parameters of a main method.
    */

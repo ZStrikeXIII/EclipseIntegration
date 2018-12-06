@@ -2,7 +2,7 @@
 // This class is exclusively made to show an example of a Switch class, as I couldn't find a way to
 // get it into my actual program, as well as a method made using arguments at the bottom.
 /**
- * Used to show a switch statement, as well as a method made using arguments.
+ * Used to perform a switch statement, as well as a method made using arguments.
  * 
  * @author Jackson Turner
  *
